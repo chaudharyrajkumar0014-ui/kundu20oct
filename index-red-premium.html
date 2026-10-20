@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10070b">
+
+<title>Official Community Access | Join Telegram</title>
+<meta name="description" content="Join the official community for updates, announcements and community content.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Official Community Access">
+<meta property="og:description" content="Join the official community for updates and announcements.">
+<meta property="og:image" content="photo.jpg">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1028736550217100');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1028736550217100&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+  --gold:#ff3658;
+  --gold2:#ffd9e1;
+  --text:#f8f8f8;
+  --muted:#c0aeb5;
+  --panel:rgba(32, 10, 19, .78);
+  --line:rgba(255,255,255,.10);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255, 42, 83, .18),transparent 30%),
+    radial-gradient(circle at 85% 85%,rgba(255, 91, 112, .12),transparent 28%),
+    #080509;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:22px;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.22;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:45px 45px;
+  mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(80px);
+  pointer-events:none;
+  opacity:.55;
+  animation:float 9s ease-in-out infinite;
+}
+.orb.one{width:260px;height:260px;left:-100px;top:-90px;background:rgba(255, 42, 83, .15)}
+.orb.two{width:300px;height:300px;right:-130px;bottom:-120px;background:rgba(255, 83, 113, .13);animation-delay:-4s}
+
+@keyframes float{
+  50%{transform:translate3d(0,25px,0) scale(1.04)}
+}
+
+.card{
+  position:relative;
+  width:min(100%,460px);
+  padding:34px 25px 23px;
+  border:1px solid rgba(255, 65, 91, .28);
+  border-radius:32px;
+  background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.72),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 45px rgba(255, 48, 83, .10);
+  text-align:center;
+  overflow:hidden;
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  width:220px;height:220px;
+  left:50%;top:-150px;
+  transform:translateX(-50%);
+  background:rgba(255, 48, 83, .19);
+  filter:blur(60px);
+  pointer-events:none;
+}
+
+.top-line{
+  width:70px;height:3px;
+  margin:0 auto 24px;
+  border-radius:10px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 18px rgba(255, 48, 83, .48);
+}
+
+.profile-wrap{
+  position:relative;
+  width:128px;height:128px;
+  margin:auto;
+}
+
+.profile-wrap:before{
+  content:"";
+  position:absolute;
+  inset:-9px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg,transparent,var(--gold),transparent 55%);
+  animation:spin 5s linear infinite;
+  opacity:.8;
+}
+
+.profile-wrap:after{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:50%;
+  background:#10070b;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.profile{
+  position:relative;
+  z-index:2;
+  width:100%;height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #151515;
+  display:block;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:22px;
+  padding:8px 14px;
+  border:1px solid rgba(255, 65, 91, .30);
+  border-radius:999px;
+  color:var(--gold2);
+  background:rgba(255, 48, 83, .08);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.4px;
+}
+
+.badge span{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:#63e68b;
+  box-shadow:0 0 10px #63e68b;
+}
+
+h1{
+  margin-top:16px;
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-size:clamp(30px,8vw,42px);
+  line-height:1.05;
+  letter-spacing:-1.5px;
+  font-weight:700;
+  background:linear-gradient(100deg,#fff,var(--gold2) 48%,var(--gold));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.desc{
+  max-width:360px;
+  margin:13px auto 0;
+  color:#bcbcc2;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.join-btn{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:62px;
+  margin-top:25px;
+  padding:16px 22px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  text-decoration:none;
+  color:#ffffff;
+  background:linear-gradient(135deg,#ffd9e1 0%,#ff3658 45%,#d89c25 100%);
+  box-shadow:0 14px 35px rgba(255, 65, 91, .28);
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:.2px;
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+  overflow:hidden;
+}
+
+.join-btn:before{
+  content:"";
+  position:absolute;
+  top:0;left:-100%;
+  width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-20deg);
+  transition:left .7s ease;
+}
+.join-btn:hover:before{left:150%}
+.join-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 45px rgba(255, 48, 83, .34);
+}
+.join-btn:active{transform:translateY(-1px)}
+
+.telegram-icon{
+  width:28px;height:28px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:rgba(0,0,0,.10);
+  font-size:16px;
+}
+
+.timer-box{
+  margin-top:15px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(30,6,15,.38);
+}
+
+.timer-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#96969e;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.4px;
+}
+
+#countdown{
+  margin-top:7px;
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-size:38px;
+  font-weight:700;
+  color:#fff;
+}
+
+.progress{
+  width:100%;height:5px;
+  margin-top:12px;
+  border-radius:99px;
+  overflow:hidden;
+  background:rgba(255,255,255,.08);
+}
+
+.progress-bar{
+  width:100%;height:100%;
+  transform-origin:left center;
+  background:linear-gradient(90deg,#d89c25,#ffd9e1,#ff3658);
+  box-shadow:0 0 15px rgba(255, 48, 83, .38);
+  transition:transform 1s linear;
+}
+
+.note{
+  margin-top:13px;
+  color:#8e8e95;
+  font-size:11px;
+  line-height:1.6;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:19px;
+}
+
+.info-item{
+  padding:12px 8px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;
+  background:rgba(255,70,100,.035);
+}
+.info-item strong{
+  display:block;
+  font-size:12px;
+  color:#eee;
+}
+.info-item small{
+  display:block;
+  margin-top:4px;
+  color:#7f7f87;
+  font-size:10px;
+}
+
+.disclaimer{
+  margin-top:20px;
+  padding-top:17px;
+  border-top:1px solid rgba(255,255,255,.07);
+  color:#77777e;
+  font-size:10px;
+  line-height:1.65;
+}
+
+.footer{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:16px;
+}
+.footer a{
+  color:#a8a8af;
+  text-decoration:none;
+  font-size:11px;
+  transition:color .2s;
+}
+.footer a:hover{color:var(--gold)}
+
+@media(max-width:430px){
+  body{padding:14px}
+  .card{padding:28px 18px 20px;border-radius:27px}
+  .profile-wrap{width:112px;height:112px}
+  .info{gap:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<main class="card">
+  <div class="top-line"></div>
+
+  <div class="profile-wrap">
+    <img src="photo.jpg" class="profile" alt="Community profile image" loading="eager">
+  </div>
+
+  <div class="badge"><span></span> OFFICIAL COMMUNITY</div>
+
+  <h1>𝙞𝙢 𝙆𝙪𝙣𝙙𝙪</h1>
+
+  <p class="desc">
+    Join the official Telegram community for updates, announcements and community content.
+  </p>
+
+  <a
+    href="https://t.me/+km08Fo6jBtRlODM1"
+    class="join-btn"
+    id="joinBtn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Join official Telegram community"
+  >
+    <span class="telegram-icon">✈</span>
+    JOIN TELEGRAM
+  </a>
+
+  <section class="timer-box" aria-label="Redirect countdown">
+    <div class="timer-head">
+      <span>AUTO REDIRECT</span>
+      <span id="status">READY</span>
+    </div>
+    <div id="countdown">3</div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </section>
+
+  <p class="note">
+    You can join manually at any time. If automatic redirection is blocked, use the button above.
+  </p>
+
+  <div class="info">
+    <div class="info-item">
+      <strong>Official Access</strong>
+      <small>Community link</small>
+    </div>
+    <div class="info-item">
+      <strong>Voluntary</strong>
+      <small>Leave anytime</small>
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    This page provides access to a community platform. Participation is voluntary.
+    Please review the destination platform's own rules and privacy practices before joining.
+  </p>
+
+  <nav class="footer" aria-label="Footer navigation">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</main>
+
+<script>
+(function(){
+  const target = "https://t.me/+km08Fo6jBtRlODM1";
+  const total = 3;
+  let remaining = total;
+
+  const countdown = document.getElementById("countdown");
+  const progress = document.getElementById("progressBar");
+  const status = document.getElementById("status");
+  const joinBtn = document.getElementById("joinBtn");
+
+  function trackLead(){
+    if(typeof fbq === "function"){
+      fbq("track","Lead");
+    }
+  }
+
+  joinBtn.addEventListener("click", trackLead);
+
+  countdown.textContent = String(remaining).padStart(2,"0");
+
+  const timer = setInterval(function(){
+    remaining--;
+    countdown.textContent = String(Math.max(remaining,0)).padStart(2,"0");
+    progress.style.transform = "scaleX(" + (Math.max(remaining,0) / total) + ")";
+
+    if(remaining <= 0){
+      clearInterval(timer);
+      status.textContent = "OPENING";
+      trackLead();
+
+      // Small delay keeps the UI transition visible and avoids an instant navigation.
+      setTimeout(function(){
+        window.location.href = target;
+      }, 250);
+    }
+  },1000);
+})();
+</script>
+</body>
+</html>
